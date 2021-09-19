@@ -2,9 +2,22 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
-//I guess I will be writing all of these with sequelize
 
 router.get('/', (req, res) => {
+  Category.findAll({
+    attributes:['id','category_name'],
+    include: [
+      {
+        model: Product,
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      }
+    ]
+  })
+    .then(categoriesData => res.json(categoriesData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
   // find all categories
   // be sure to include its associated Products
 });
