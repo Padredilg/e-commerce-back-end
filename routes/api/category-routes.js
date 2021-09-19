@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
-// The `/api/categories` endpoint
+// http://localhost:3001/api/categories endpoint
 
+//GET all categories 
 router.get('/', (req, res) => {
   Category.findAll({
     attributes:['id','category_name'],
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
     res.status(500).json(err);
   });
 });
-
+//GET category by ID
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
@@ -37,9 +38,16 @@ router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
 });
-
+//POST new category
 router.post('/', (req, res) => {
-  // create a new category
+  Category.create({
+    category_name: req.body.category_name
+  })
+  .then(categoryData => res.json(categoryData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
