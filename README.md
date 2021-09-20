@@ -46,7 +46,7 @@ video here
 
 #### *DELETE Category:*
 
-</br><img width="625" alt="screenshot from DELETE category by ID in insomnia" src="./assets/images/delete-category.png "></img>
+</br><img width="625" alt="screenshot from DELETE category by ID in insomnia" src="./assets/images/delete-category-by-id.png "></img>
 
 ## License
 This application is covered under the <a href='https://opensource.org/licenses/MIT'>MIT License</a>
