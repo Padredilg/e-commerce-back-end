@@ -23,9 +23,10 @@ The purpose of this project is to serve as the back-end for a company's software
 Once all of that is taken care of, the user will be good to go!
 
 ## Usage
-The application can be started by running the command "npm start" on the command line.Then, it can be tested using a REST API Client such as insomnia.</br>
+The application can be started by running the command "*npm start*" on the command line. Then, it can be tested using a REST API Client such as insomnia.</br>
+You may create all of your data from zero, but if you would like to test the routes first, you may use test data by running the command "*npm run seed*" on your terminal.</br>
 
-video here
+https://user-images.githubusercontent.com/85601336/134028083-613000ef-5b18-4a3e-a278-4e43297d2c7d.mp4
 
 ## Tests
 #### *GET all Categories:*
