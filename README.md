@@ -28,25 +28,25 @@ The application can be started by running the command "npm start" on the command
 video here
 
 ## Tests
-GET all Categories
+#### *GET all Categories:*
 
-</br><img alt="screenshot from GET categories in insomnia" src="./assets/images/get-all-categories.png "></img>
+</br><img width="625" alt="screenshot from GET categories in insomnia" src="./assets/images/get-all-categories.png "></img>
 
-GET tag by ID
+#### *GET tag by ID:*
 
-</br><img alt="screenshot from GET tag by ID in insomnia" src="./assets/images/get-tag-by-id.png "></img>
+</br><img width="625" alt="screenshot from GET tag by ID in insomnia" src="./assets/images/get-tag-by-id.png "></img>
 
-POST product
+#### *POST product:*
 
-</br><img alt="screenshot from POST product in insomnia" src="./assets/images/post-product.png "></img>
+</br><img width="625" alt="screenshot from POST product in insomnia" src="./assets/images/post-product.png "></img>
 
-PUT product
+#### *PUT product:*
 
-</br><img alt="screenshot from put-product in insomnia" src="./assets/images/put-product.png "></img>
+</br><img width="625" alt="screenshot from put-product in insomnia" src="./assets/images/put-product.png "></img>
 
-DELETE Category
+#### *DELETE Category:*
 
-</br><img alt="screenshot from DELETE category by ID in insomnia" src="./assets/images/delete-category.png "></img>
+</br><img width="625" alt="screenshot from DELETE category by ID in insomnia" src="./assets/images/delete-category.png "></img>
 
 ## License
 This application is covered under the <a href='https://opensource.org/licenses/MIT'>MIT License</a>
