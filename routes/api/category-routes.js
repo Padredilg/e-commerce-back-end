@@ -44,18 +44,55 @@ router.post('/', (req, res) => {
     category_name: req.body.category_name
   })
   .then(categoryData => res.json(categoryData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+//PUT update category
+router.put('/:id', (req, res) => {
+  Category.update(
+    {
+      category_name: req.body.category_name
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+  .then(categoryData => {
+    if (!categoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
+        return;
+    }
+    res.json(categoryData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+//DELETE a category
+router.delete('/:id', (req, res) => {
+  Category.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(categoryData => {
+    if (!categoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
+        return;
+    }
+    res.json(categoryData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
-});
-
-router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
-});
+//FIND OUT WHY NULL VALUES ARE BEING ALLOWED ON POST AND PUT
 
 module.exports = router;
