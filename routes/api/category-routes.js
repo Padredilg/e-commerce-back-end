@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
     res.status(500).json(err);
   });
 });
+
 //GET category by ID
 router.get('/:id', (req, res) => {
   Category.findOne({
@@ -35,13 +36,12 @@ router.get('/:id', (req, res) => {
       console.log(err);
       res.status(500).json(err);
   });
-  // find one category by its `id` value
-  // be sure to include its associated Products
 });
+
 //POST new category
 router.post('/', (req, res) => {
   Category.create({
-    category_name: req.body.category_name
+    category_name: req.body.category_name.trim()
   })
   .then(categoryData => res.json(categoryData))
   .catch(err => {
@@ -49,11 +49,12 @@ router.post('/', (req, res) => {
     res.status(500).json(err);
   });
 });
+
 //PUT update category
 router.put('/:id', (req, res) => {
   Category.update(
     {
-      category_name: req.body.category_name
+      category_name: req.body.category_name.trim()
     },
     {
       where: {
@@ -73,6 +74,7 @@ router.put('/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
+
 //DELETE a category
 router.delete('/:id', (req, res) => {
   Category.destroy({
@@ -92,7 +94,5 @@ router.delete('/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
-
-//FIND OUT WHY NULL VALUES ARE BEING ALLOWED ON POST AND PUT
 
 module.exports = router;

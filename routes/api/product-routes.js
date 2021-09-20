@@ -53,6 +53,7 @@ router.get('/:id', (req, res) => {
 
 // POST new product
 router.post('/', (req, res) => {
+  req.body.product_name = req.body.product_name.trim()
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -77,7 +78,7 @@ router.post('/', (req, res) => {
 
 // PUT update product
 router.put('/:id', (req, res) => {
-  // update product data
+  req.body.product_name = req.body.product_name.trim()
   Product.update(req.body, {
     where: {
       id: req.params.id,
